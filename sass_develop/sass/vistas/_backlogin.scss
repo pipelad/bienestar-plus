@@ -1,0 +1,50 @@
+.login {
+	height: 100%;
+	color: var(--color-plus-oscuro);
+	@include flex-display-centered;
+
+	&--form {
+		width: 40rem;
+		border-radius: 1rem;
+		overflow: hidden;
+
+		&-row {
+			min-height: 2.5rem;
+			padding: 1rem;
+
+			label {
+				width: 30%;
+				display: inline-block;
+			}
+
+			input {
+				width: 69%;
+				margin-left: 1%;
+			}
+
+			img {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+		}
+
+		.submit {
+			@include flex-display-centered;
+			
+			button {
+				background-color: var(--color-azul-plus);
+				color: var(--color-blanco);
+				
+				&:hover,
+				&:focus {
+					background-color: var(--color-plus-oscuro);
+					color: var(--color-blanco);
+				}
+			}
+		}
+
+		&-row:not(.transparent) {
+			background-color: var(--color-blanco);
+		}
+	}
+}

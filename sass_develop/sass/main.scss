@@ -1,0 +1,12 @@
+// abstracts
+@import "abstract/mixins";
+@import "abstract/root";
+@import "abstract/reset";
+@import "abstract/typography";
+@import "abstract/animations.scss";
+
+// vistas
+@import "vistas/frontload";
+@import "vistas/fronthome";
+@import "vistas/frontnav";
+@import "vistas/frontpages";

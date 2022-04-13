@@ -1,0 +1,346 @@
+.addform {
+	padding: 2rem;
+
+	h2 {
+		color: var(--color-bog);
+		text-transform: uppercase;
+		width: 100%;
+		text-align: center;
+		@include condensed;
+		margin-bottom: 2rem;
+	}
+
+	&--info {
+		border: solid thin var(--color-azul-plus);
+		padding: 2rem;
+		border-radius: 1rem;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-gap: 1rem;
+
+		label {
+			display: inline-block;
+			width: 10rem;
+		}
+		input {
+			width: calc(100% - 11rem);
+			border: solid thin var(--color-plus-oscuro);
+			border-radius: .5rem;
+			padding: .5rem;
+		}
+
+		select {
+			width: calc(100% - 11rem);
+		}
+
+		h3 {
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+			color: var(--color-azul-plus);
+		}
+
+		.row {
+			margin-bottom: 1rem;
+		}
+
+		.basic-data {
+			border-right: thin solid var(--color-plus-oscuro);
+			padding-right: 1rem;
+		}
+
+		.content-data {
+
+			.disabled {
+				opacity: 0;
+				display: none;
+			}
+
+			.enabled {
+				animation: loadright forwards ease 1s;
+			}
+
+			#addgaleryitem {
+				cursor: pointer;
+			    padding: 0.2rem 0.5rem;
+			    font-size: 3rem;
+			    line-height: 3rem;
+			    text-align: center;
+			    width: 3.5rem;
+			    border-radius: 50%;
+			    color: var(--color-blanco);
+			    background-color: var(--color-azul-plus);
+
+			    &:hover,
+			    &:focus {
+			    	background-color: var(--color-bog);
+			    }
+			}
+		}
+	}
+
+	
+
+	&--submit {
+		margin-top: 2rem;
+		@include flex-display;
+		justify-content: space-between;
+
+		button {
+			background-color: var(--color-buca);
+			color: var(--color-plus-oscuro);
+
+			&:hover,
+			&:focus {
+				background-color: var(--color-bog);
+				color: var(--color-blanco);
+			}
+		}
+
+		#cancelform {
+			padding: 1rem;
+		    cursor: pointer;
+		    font-size: 2rem;
+		    text-transform: uppercase;
+		    border-radius: 1rem;
+		    border: solid 0.1rem var(--color-rojo);
+		    color: var(--color-rojo);
+
+		    &:hover, 
+		    &:focus {
+		    	background-color: var(--color-rojo);
+		    	color: var(--color-blanco);
+		    }
+		}
+	}
+}
+
+.banner {
+	padding: 2rem;
+
+	h2 {
+		color: var(--color-bog);
+		text-transform: uppercase;
+		width: 100%;
+		text-align: center;
+		@include condensed;
+		margin-bottom: 2rem;
+	}
+
+	&--items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 2rem;
+		margin-bottom: 2rem;
+
+		.item {
+			border-radius: .5rem;
+			background-color: var(--color-blanco);
+			@include shadowlow;
+			overflow: hidden;;
+
+			&--imagen {
+
+				img {
+					width: 100%;
+					@include image-block;
+				}
+			}
+
+			&--controls {
+				@include flex-display;
+				justify-content: space-between;
+				padding: 1rem;
+
+				.edit {
+					padding: 1rem;
+				    border: none;
+				    cursor: pointer;
+				    font-size: 2rem;
+				    text-transform: uppercase;
+				    background-color: var(--color-bog);
+				    color: var(--color-blanco);
+				    border-radius: .5rem;
+
+				    &:focus,
+				    &:hover {
+				    	background-color: var(--color-buca);
+				    	color: var(--color-plus-oscuro);
+				    }
+				}
+
+				button {
+					background-color: var(--color-rojo);
+					color: var(--color-blanco);
+
+					&:hover,
+					&:focus {
+						background-color: var(--color-plus-oscuro);
+					}
+				}
+			}
+		}
+	}
+
+	&--form {
+
+		#addgaleryitem {
+			cursor: pointer;
+		    padding: 0.2rem 0.5rem;
+		    font-size: 3rem;
+		    line-height: 3rem;
+		    text-align: center;
+		    width: 3.5rem;
+		    border-radius: 50%;
+		    color: var(--color-blanco);
+		    background-color: var(--color-azul-plus);
+
+		    &:hover,
+		    &:focus {
+		    	background-color: var(--color-bog);
+		    }
+		}	
+	}
+
+	&--edit {
+		.current {
+			@include flex-display-centered;
+			margin-bottom: 2rem;
+		}	
+	}
+
+	.row {
+		margin-bottom: 1rem;
+
+		label {
+			display: inline-block;
+			width: 10rem;
+		}
+		input {
+			width: calc(100% - 11rem);
+			border: solid thin var(--color-plus-oscuro);
+			border-radius: .5rem;
+			padding: .5rem;
+		}
+	}
+
+	.submit {
+		margin-top: 2rem;
+		@include flex-display;
+		justify-content: space-between;
+
+		button {
+			background-color: var(--color-buca);
+
+			&:focus,
+			&:hover {
+				background-color: var(--color-bog);
+				color: var(--color-blanco);
+			}
+
+			&:disabled {
+				cursor: not-allowed;
+				
+				&:focus,
+				&:hover {
+					background-color: var(--color-plus-claro);
+					color: var(--color-rojo);
+				}
+			}
+		}
+
+		.cancelar {
+			padding: 1rem;
+		    cursor: pointer;
+		    font-size: 2rem;
+		    text-transform: uppercase;
+			border: solid thin var(--color-rojo);
+			color: var(--color-rojo);
+			border-radius: 1rem;
+
+			&:focus,
+			&:hover {
+				background-color: var(--color-rojo);
+				color: var(--color-blanco);
+			}
+		}
+	}
+}
+
+.edititem {
+	padding: 2rem;
+	
+	.title {
+		@include flex-display;
+		justify-content: space-between;
+
+		button {
+			background-color: var(--color-rojo);
+			color: var(--color-blanco);
+			border-radius: .8rem;
+
+			&:hover,
+			&:focus {
+				background-color: var(--color-plus-oscuro);
+			}
+		}
+	}
+
+	.video-edit {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-gap: 1rem;
+	}
+
+	.fotos-edit {
+		padding: 2rem 2rem 0rem 2rem;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-gap: 1.5rem;
+
+		.row {
+			border-radius: .5rem;
+			background-color: var(--color-blanco);
+			@include shadowlow;
+			overflow: hidden;
+
+			&--image {
+				img {
+					width: 100%;
+				}
+			}
+
+			button {
+				border-radius: 0rem;
+				color: var(--color-blanco);
+				background-color: var(--color-rojo);
+
+				&:hover,
+				&:focus {
+					background-color: var(--color-plus-oscuro);
+				}
+			}
+		}
+
+	}
+
+	.fotos-new {
+
+		#addgaleryitem {
+			cursor: pointer;
+		    padding: 0.2rem 0.5rem;
+		    font-size: 3rem;
+		    line-height: 3rem;
+		    text-align: center;
+		    width: 3.5rem;
+		    border-radius: 50%;
+		    color: var(--color-blanco);
+		    background-color: var(--color-azul-plus);
+
+		    &:hover,
+		    &:focus {
+		    	background-color: var(--color-bog);
+		    }
+		}
+		
+	}
+}

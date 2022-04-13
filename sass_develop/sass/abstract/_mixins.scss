@@ -1,0 +1,47 @@
+@mixin flex-display {
+	display: flex;
+}
+@mixin flex-display-row {
+	display: flex;
+	flex-flow: row wrap;
+}
+@mixin flex-display-centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin flex-display-centered-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+@mixin image-block {
+	display:inline;
+	vertical-align:middle
+}
+@mixin shadow {
+	filter: drop-shadow(.5rem .5rem 1rem rgba(0,0,0,0.5));
+}
+@mixin shadowlow {
+	filter: drop-shadow(.3rem .3rem .3rem rgba(0,0,0,0.5));
+}
+@mixin condensed {
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 0.1rem;
+}
+
+@mixin bordeplusboton {
+	border-bottom-left-radius: 2rem;
+}
+
+@mixin homemodule {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 3rem 1fr 3rem;
+	grid-gap:0.5rem;
+}
+
+@mixin bp_desplazo {
+	transform: translate3d(1rem, -1rem, 0rem);	
+}

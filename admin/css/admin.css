@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+:root {
+  --color-azul-plus: #6CA4CF;
+  --color-blanco: #fff;
+  --color-bog: #09458A;
+  --color-duad: #1BB6EC;
+  --color-buca: #78CC4C;
+  --color-tunja: #FF2B8A;
+  --color-medallo: #6F47AC;
+  --color-villavo: #FF7901;
+  --color-plus-claro:	#9B7064;
+  --color-plus-oscuro: #0C0D17;
+  --color-rojo: #D40720; }
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+*:active, *:focus {
+  outline: none; }
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%; }
+
+button {
+  font-family: 'Roboto', sans-serif; }
+
+/*
+@media (max-width: 1360px) { html { font-size: 55%; } }
+
+@media (max-width: 1240px) { html { font-size: 50%; } }
+
+@media (max-width: 1140px) { html { font-size: 45%; } }
+
+@media (max-width: 950px) { html { font-size: 40%; } }
+
+@media (max-width: 850px) { html { font-size: 30%; } }
+
+@media screen and (orientation: portrait)  {
+
+	html { 
+		font-size: 62.5%;
+	}
+
+}
+
+*/
+@keyframes flyload {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0; }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1; } }
+
+@keyframes loadright {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem); }
+  100% {
+    opacity: 1;
+    transform: translatex(0rem); } }
+
+@keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    height: 0rem;
+    padding: 0rem; } }
+
+.login {
+  height: 100%;
+  color: var(--color-plus-oscuro);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .login--form {
+    width: 40rem;
+    border-radius: 1rem;
+    overflow: hidden; }
+    .login--form-row {
+      min-height: 2.5rem;
+      padding: 1rem; }
+      .login--form-row label {
+        width: 30%;
+        display: inline-block; }
+      .login--form-row input {
+        width: 69%;
+        margin-left: 1%; }
+      .login--form-row img {
+        width: 100%;
+        margin-bottom: 1rem; }
+    .login--form .submit {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .login--form .submit button {
+        background-color: var(--color-azul-plus);
+        color: var(--color-blanco); }
+        .login--form .submit button:hover, .login--form .submit button:focus {
+          background-color: var(--color-plus-oscuro);
+          color: var(--color-blanco); }
+    .login--form-row:not(.transparent) {
+      background-color: var(--color-blanco); }
+
+html {
+  min-height: 100vh; }
+
+body {
+  width: 100%;
+  min-height: 100%;
+  font-size: 1.6rem;
+  background-color: var(--color-plus-oscuro);
+  color: var(--color-blanco); }
+
+button {
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-bottom-left-radius: 2rem; }
+
+button:active {
+  transform: translate3d(0.2rem, 0.2rem, 0px); }
+
+#error {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 1rem;
+  animation: fadeout forwards 1s ease;
+  animation-delay: 7s; }
+
+#advertencia {
+  background-color: var(--color-buca);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 1rem;
+  animation: fadeout forwards 1s ease;
+  animation-delay: 2s; }
+
+.hidden {
+  display: none; }
+
+.admin {
+  width: calc(100% - 4rem);
+  min-height: calc(100% - 4rem);
+  margin: 2rem;
+  background-color: var(--color-blanco);
+  border-radius: 1rem;
+  color: var(--color-plus-oscuro); }
+  .admin--header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-blanco);
+    z-index: 10;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    filter: drop-shadow(0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5));
+    margin-bottom: 2rem; }
+    .admin--header-nav ul.navegacion {
+      display: flex;
+      margin: auto 0;
+      list-style-type: none;
+      height: 100%; }
+      .admin--header-nav ul.navegacion li {
+        margin-top: 0.5rem; }
+        .admin--header-nav ul.navegacion li:not(:last-child) {
+          margin-right: 2rem; }
+        .admin--header-nav ul.navegacion li a {
+          display: block;
+          padding: 0rem 1rem 1rem 1rem;
+          text-indent: 1rem;
+          font-size: 2rem;
+          background-color: var(--color-azul-plus);
+          border-bottom-left-radius: 2rem;
+          z-index: 2;
+          position: relative;
+          color: var(--color-blanco); }
+          .admin--header-nav ul.navegacion li a:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-bog);
+            border-bottom-left-radius: 2rem;
+            position: absolute;
+            left: .5rem;
+            bottom: .5rem;
+            z-index: -1; }
+          .admin--header-nav ul.navegacion li a:hover:before, .admin--header-nav ul.navegacion li a:focus:before {
+            background-color: var(--color-plus-oscuro); }
+          .admin--header-nav ul.navegacion li a:active {
+            transform: translate3d(0.3rem, 0.3rem, 0rem); }
+  .admin .itemlist {
+    padding: 1rem 2rem 2rem 2rem; }
+    .admin .itemlist > div:nth-child(even) {
+      background-color: var(--color-plus-claro);
+      color: var(--color-blanco); }
+    .admin .itemlist--header {
+      margin: 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr repeat(5, 12rem);
+      grid-gap: 0.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 0.1rem solid var(--color-plus-oscuro);
+      font-family: 'Roboto Condensed', sans-serif;
+      letter-spacing: 0.1rem;
+      font-size: 2rem; }
+    .admin .itemlist--item {
+      display: grid;
+      grid-template-columns: 2fr repeat(5, 12rem);
+      grid-gap: 0.5rem;
+      margin-bottom: .5rem;
+      border-radius: .5rem; }
+      .admin .itemlist--item > div {
+        display: flex;
+        padding: 0.7rem;
+        margin: auto 0; }
+      .admin .itemlist--item-nombre {
+        text-indent: 1rem;
+        font-family: 'Roboto Condensed', sans-serif;
+        letter-spacing: 0.1rem;
+        font-size: 2rem; }
+      .admin .itemlist--item-editar {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .admin .itemlist--item a.editbnt {
+        padding: 1rem 1.2rem;
+        border-bottom-left-radius: 2rem;
+        display: inline-block;
+        font-size: 1.4rem;
+        background-color: var(--color-azul-plus);
+        color: var(--color-blanco); }
+        .admin .itemlist--item a.editbnt:hover, .admin .itemlist--item a.editbnt:focus {
+          background-color: var(--color-plus-oscuro); }
+
+.addform {
+  padding: 2rem; }
+  .addform h2 {
+    color: var(--color-bog);
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem; }
+  .addform--info {
+    border: solid thin var(--color-azul-plus);
+    padding: 2rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem; }
+    .addform--info label {
+      display: inline-block;
+      width: 10rem; }
+    .addform--info input {
+      width: calc(100% - 11rem);
+      border: solid thin var(--color-plus-oscuro);
+      border-radius: .5rem;
+      padding: .5rem; }
+    .addform--info select {
+      width: calc(100% - 11rem); }
+    .addform--info h3 {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--color-azul-plus); }
+    .addform--info .row {
+      margin-bottom: 1rem; }
+    .addform--info .basic-data {
+      border-right: thin solid var(--color-plus-oscuro);
+      padding-right: 1rem; }
+    .addform--info .content-data .disabled {
+      opacity: 0;
+      display: none; }
+    .addform--info .content-data .enabled {
+      animation: loadright forwards ease 1s; }
+    .addform--info .content-data #addgaleryitem {
+      cursor: pointer;
+      padding: 0.2rem 0.5rem;
+      font-size: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      width: 3.5rem;
+      border-radius: 50%;
+      color: var(--color-blanco);
+      background-color: var(--color-azul-plus); }
+      .addform--info .content-data #addgaleryitem:hover, .addform--info .content-data #addgaleryitem:focus {
+        background-color: var(--color-bog); }
+  .addform--submit {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between; }
+    .addform--submit button {
+      background-color: var(--color-buca);
+      color: var(--color-plus-oscuro); }
+      .addform--submit button:hover, .addform--submit button:focus {
+        background-color: var(--color-bog);
+        color: var(--color-blanco); }
+    .addform--submit #cancelform {
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 2rem;
+      text-transform: uppercase;
+      border-radius: 1rem;
+      border: solid 0.1rem var(--color-rojo);
+      color: var(--color-rojo); }
+      .addform--submit #cancelform:hover, .addform--submit #cancelform:focus {
+        background-color: var(--color-rojo);
+        color: var(--color-blanco); }
+
+.banner {
+  padding: 2rem; }
+  .banner h2 {
+    color: var(--color-bog);
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem; }
+  .banner--items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 2rem; }
+    .banner--items .item {
+      border-radius: .5rem;
+      background-color: var(--color-blanco);
+      filter: drop-shadow(0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5));
+      overflow: hidden; }
+      .banner--items .item--imagen img {
+        width: 100%;
+        display: inline;
+        vertical-align: middle; }
+      .banner--items .item--controls {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem; }
+        .banner--items .item--controls .edit {
+          padding: 1rem;
+          border: none;
+          cursor: pointer;
+          font-size: 2rem;
+          text-transform: uppercase;
+          background-color: var(--color-bog);
+          color: var(--color-blanco);
+          border-radius: .5rem; }
+          .banner--items .item--controls .edit:focus, .banner--items .item--controls .edit:hover {
+            background-color: var(--color-buca);
+            color: var(--color-plus-oscuro); }
+        .banner--items .item--controls button {
+          background-color: var(--color-rojo);
+          color: var(--color-blanco); }
+          .banner--items .item--controls button:hover, .banner--items .item--controls button:focus {
+            background-color: var(--color-plus-oscuro); }
+  .banner--form #addgaleryitem {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    width: 3.5rem;
+    border-radius: 50%;
+    color: var(--color-blanco);
+    background-color: var(--color-azul-plus); }
+    .banner--form #addgaleryitem:hover, .banner--form #addgaleryitem:focus {
+      background-color: var(--color-bog); }
+  .banner--edit .current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem; }
+  .banner .row {
+    margin-bottom: 1rem; }
+    .banner .row label {
+      display: inline-block;
+      width: 10rem; }
+    .banner .row input {
+      width: calc(100% - 11rem);
+      border: solid thin var(--color-plus-oscuro);
+      border-radius: .5rem;
+      padding: .5rem; }
+  .banner .submit {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between; }
+    .banner .submit button {
+      background-color: var(--color-buca); }
+      .banner .submit button:focus, .banner .submit button:hover {
+        background-color: var(--color-bog);
+        color: var(--color-blanco); }
+      .banner .submit button:disabled {
+        cursor: not-allowed; }
+        .banner .submit button:disabled:focus, .banner .submit button:disabled:hover {
+          background-color: var(--color-plus-claro);
+          color: var(--color-rojo); }
+    .banner .submit .cancelar {
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 2rem;
+      text-transform: uppercase;
+      border: solid thin var(--color-rojo);
+      color: var(--color-rojo);
+      border-radius: 1rem; }
+      .banner .submit .cancelar:focus, .banner .submit .cancelar:hover {
+        background-color: var(--color-rojo);
+        color: var(--color-blanco); }
+
+.edititem {
+  padding: 2rem; }
+  .edititem .title {
+    display: flex;
+    justify-content: space-between; }
+    .edititem .title button {
+      background-color: var(--color-rojo);
+      color: var(--color-blanco);
+      border-radius: .8rem; }
+      .edititem .title button:hover, .edititem .title button:focus {
+        background-color: var(--color-plus-oscuro); }
+  .edititem .video-edit {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem; }
+  .edititem .fotos-edit {
+    padding: 2rem 2rem 0rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1.5rem; }
+    .edititem .fotos-edit .row {
+      border-radius: .5rem;
+      background-color: var(--color-blanco);
+      filter: drop-shadow(0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5));
+      overflow: hidden; }
+      .edititem .fotos-edit .row--image img {
+        width: 100%; }
+      .edititem .fotos-edit .row button {
+        border-radius: 0rem;
+        color: var(--color-blanco);
+        background-color: var(--color-rojo); }
+        .edititem .fotos-edit .row button:hover, .edititem .fotos-edit .row button:focus {
+          background-color: var(--color-plus-oscuro); }
+  .edititem .fotos-new #addgaleryitem {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    width: 3.5rem;
+    border-radius: 50%;
+    color: var(--color-blanco);
+    background-color: var(--color-azul-plus); }
+    .edititem .fotos-new #addgaleryitem:hover, .edititem .fotos-new #addgaleryitem:focus {
+      background-color: var(--color-bog); }

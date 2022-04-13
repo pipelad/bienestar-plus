@@ -1,0 +1,181 @@
+html {
+	min-height: 100vh;
+}
+body {
+	width: 100%;
+	min-height: 100%;
+	font-size: 1.6rem;
+	background-color: var(--color-plus-oscuro);
+	color: var(--color-blanco);
+}
+
+button {
+	padding: 1rem;
+	border: none;
+	cursor: pointer;
+	font-size: 2rem;
+	text-transform: uppercase;
+	@include bordeplusboton;
+}
+
+button:active {
+	transform: translate3d(.2rem, .2rem, 0px);
+}
+
+#error {
+	background-color: var(--color-rojo);
+	color: var(--color-blanco);
+	text-align: center;
+	padding: 1rem;
+	animation: fadeout forwards 1s ease;
+	animation-delay: 7s;
+}
+
+#advertencia {
+	background-color: var(--color-buca);
+	color: var(--color-blanco);
+	text-align: center;
+	padding: 1rem;
+	animation: fadeout forwards 1s ease;
+	animation-delay: 2s;
+}
+
+.hidden {
+	display: none;
+}
+
+.admin {
+	width: calc(100% - 4rem);
+	min-height: calc(100% - 4rem);
+	margin: 2rem;
+	background-color: var(--color-blanco);
+	border-radius: 1rem;
+	color: var(--color-plus-oscuro);
+
+	&--header {
+		width: 100%;
+		@include flex-display;
+		justify-content: space-between;
+		padding: 2rem;
+		position: sticky;
+		top: 0;
+		background-color: var(--color-blanco);
+		z-index: 10;
+		border-top-right-radius: 1rem;
+		border-top-left-radius: 1rem;
+		@include shadowlow;
+		margin-bottom: 2rem;
+
+		&-nav {
+
+			ul.navegacion {
+				@include flex-display;
+				margin: auto 0;
+				list-style-type: none;
+				height: 100%;
+
+				li {
+					margin-top: 0.5rem;
+
+					&:not(:last-child) {
+						margin-right: 2rem;
+					}
+
+					a {
+						display: block;
+						padding: 0rem 1rem 1rem 1rem;
+						text-indent:1rem;
+						font-size: 2rem;
+						background-color: var(--color-azul-plus);
+						@include bordeplusboton;
+						z-index: 2;
+						position: relative;
+						color: var(--color-blanco);
+
+						&:before {
+							content: "";
+							width: 100%;
+							height: 100%;
+							background-color: var(--color-bog);
+							@include bordeplusboton;
+							position: absolute;
+							left: .5rem;
+							bottom: .5rem;
+							z-index: -1;
+						}
+
+						&:hover:before,
+						&:focus:before {
+							background-color: var(--color-plus-oscuro);
+						}
+
+						&:active {
+							transform: translate3d(.3rem, .3rem, 0rem);
+						}
+					}
+
+
+				}
+			}
+		}
+	}
+
+
+	.itemlist {
+		padding: 1rem 2rem 2rem 2rem;
+
+		> div:nth-child(even) {
+			background-color: var(--color-plus-claro);
+			color: var(--color-blanco);
+		}
+
+		&--header {
+			margin: 0 2rem;
+			display: grid;
+			grid-template-columns: 2fr repeat(5, 12rem);
+			grid-gap: 0.5rem;
+			padding-bottom: 1rem;
+			border-bottom: 0.1rem solid var(--color-plus-oscuro);
+			@include condensed;
+			font-size: 2rem;
+		}
+
+		&--item {
+			display: grid;
+			grid-template-columns: 2fr repeat(5, 12rem);
+			grid-gap: 0.5rem;
+			margin-bottom: .5rem;
+			border-radius: .5rem;
+
+			>div {
+				@include flex-display;
+				padding: 0.7rem;
+				margin: auto 0;
+			}
+
+			&-nombre {
+				text-indent: 1rem;
+				@include condensed;
+				font-size: 2rem;
+			}
+
+			&-editar {
+				@include flex-display-centered;
+			}
+
+			a.editbnt {
+				padding: 1rem 1.2rem;
+				@include bordeplusboton;
+				display: inline-block;
+				font-size: 1.4rem;
+				background-color: var(--color-azul-plus);
+				color: var(--color-blanco);
+
+				&:hover,
+				&:focus {
+					background-color: var(--color-plus-oscuro);
+				}
+			}
+		}
+	}
+}
